@@ -1,0 +1,16 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment
+venv/
+.env/
+
+# IDE / Editor settings
+.vscode/
+.idea/
+
+# Playwright reports
+test-results/
+playwright-report/
