@@ -63,11 +63,16 @@ class PageMain:
 
 	def get_job_run_status(self):
 		table = self.page.locator(self.event_table)
-		if table.filter(has_text="Job action has failed").count() > 0:
-			return -1
-		elif table.filter(has_text="The job has finished").count() > 0:
-			return 1
-		return 0
+		if table.filter(has_text="The job has finished").count() > 0:
+			return "finished"
+		elif table.filter(has_text="The job has failed").count() > 0:			
+			return "failed"
+		elif table.filter(has_text="The job was stopped").count() > 0:
+			return "stopped"
+		elif table.filter(has_text="Job action has failed").count() > 0:			
+			return "temp_failed"
+		else:
+			return "other"
 	
 	def go_to_job_editor(self):
 		self.page.goto(self.url)

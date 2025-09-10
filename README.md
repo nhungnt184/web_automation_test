@@ -67,11 +67,8 @@ It demonstrates login, job creation, job execution, and report generation workfl
 ## Test Reports
 
 To generate an **HTML test report**:
-```bash
-pytest --html=test_report.html --self-contained-html
-```
 
-Open `test_report.html` in your browser to view results.  
+Just open `test_report.html`, which is automatically generated, in your browser to view results.
 
 ---
 

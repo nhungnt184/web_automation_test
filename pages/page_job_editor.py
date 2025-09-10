@@ -72,4 +72,3 @@ class PageJobEditor:
 	# step 4
 	def job_editor_step4(self, data_file):
 		self.fill_up_form(data_file)
-		# self.click_finish_button()

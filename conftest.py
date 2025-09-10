@@ -49,9 +49,9 @@ def create_job(login):
 	job_created_successful = 0
 	try:
 		main_page.wait_job(job_name)
-		job_created_successful = 1
+		job_created_successful = True
 	except TimeoutError:
-		job_created_successful = 0
+		job_created_successful = False
 
 	yield job_name, job_created_successful
 	
@@ -63,14 +63,15 @@ def run_job(login):
 	while 1:
 		time.sleep(1)
 		job_run_status = main_page.get_job_run_status()
-		if job_run_status == -1:
+		if job_run_status == "temp_failed":
 			main_page.stop_job()
 			main_page.page.locator(main_page.run_button).wait_for()
+			job_run_status = "stopped"
 			break
-		elif job_run_status == 1:
+		elif job_run_status in ["finished", "failed"]:
 			break
 	
-	yield main_page.get_job_run_status()
+	yield job_run_status
 
 @pytest.fixture(scope="session")
 def create_report(login):
