@@ -93,6 +93,7 @@ web_automation_test/
 │
 ├── conftest.py            # Pytest fixtures
 ├── common.py              # Shared helper functions
+├── demo.mp4               # Demo video of test runs
 ├── pytest.ini             # Pytest configuration
 ├── requirements.txt       # Python dependencies
 └── test_report.html       # Example test report
@@ -106,3 +107,4 @@ web_automation_test/
 - Fixtures in `conftest.py` manage browser sessions, login, and job setup.  
 - Test data is stored in `tests/data/test_data.csv`. 
 - For the test 3, report files are stored in the 'downloads' folder under the project root instead of being stored in the default downloads folder.
+- For the video demostraing the test runs (for all 3 tests), refer to `demo.mp4`. 
