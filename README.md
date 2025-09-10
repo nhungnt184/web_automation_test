@@ -105,3 +105,4 @@ web_automation_test/
 - The project uses the **Page Object Model (POM)** for better maintainability.  
 - Fixtures in `conftest.py` manage browser sessions, login, and job setup.  
 - Test data is stored in `tests/data/test_data.csv`. 
+- For the test 3, report files are stored in the 'downloads' folder under the project root instead of being stored in the default downloads folder.
