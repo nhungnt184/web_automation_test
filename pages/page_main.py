@@ -1,4 +1,4 @@
-from playwright.sync_api import Page
+from playwright.sync_api import Page, expect
 
 class PageMain:
 	def __init__(self, page: Page):
@@ -44,8 +44,11 @@ class PageMain:
 
 	def click_popup_checkbox(self, instance):
 		popup_checkbox = f"xpath=//label[contains(text(),'{instance}')]"
-		self.page.locator(popup_checkbox).click()
-	
+		checkbox = self.page.locator(popup_checkbox)
+		expect(checkbox).to_be_visible(timeout=5000)
+		expect(checkbox).to_be_enabled(timeout=5000)
+		checkbox.click()		
+		
 	def click_popup_run_button(self):
 		self.page.locator(self.popup_run_button).click()
 
