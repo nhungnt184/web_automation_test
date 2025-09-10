@@ -8,4 +8,4 @@ def test_3_create_report(create_report):
 		for page in pdf.pages:
 			text += page.extract_text() + "\n"
 
-	assert re.search(".*Status.*Successful.*", text) # Successful
+	assert re.search(".*Status.*Successful.*", text)

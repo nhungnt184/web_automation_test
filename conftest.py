@@ -11,7 +11,7 @@ INSTANCE = "i-0b9631eceffa6646f"
 TIMEOUT = 60000 # millisecond
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 DATA_FILE = os.path.join(PROJECT_ROOT, "tests", "data", "test_data.csv")
-DOWNLOAD_DIR = Path.home() / "Downloads"
+DOWNLOAD_DIR = Path(__file__).parent / "downloads"
 REPORT_FILE_NAME_PATTERN = "job_report_*.pdf"
 
 @pytest.fixture(scope="session")
@@ -80,19 +80,12 @@ def create_report(login):
 	for f in DOWNLOAD_DIR.glob("job_report_*.pdf"):
 		f.unlink()
 
-	main_page.create_report()
-		
-	elapsed = 0
-	files = list(DOWNLOAD_DIR.glob(REPORT_FILE_NAME_PATTERN))
-	while elapsed < TIMEOUT/6000 and not files:
-		time.sleep(1)
-		elapsed += 1
-		files = list(DOWNLOAD_DIR.glob(REPORT_FILE_NAME_PATTERN))
+	# main_page.create_report()
+	with page.expect_download() as download_info:
+		main_page.create_report()
 
-	if not files:
-		pytest.fail(f"report file not found within {TIMEOUT/6000} seconds")
+	download = download_info.value
+	save_path = DOWNLOAD_DIR / download.suggested_filename
+	download.save_as(save_path)
 
-	report_file = files[0]
-	print(f"report file downloaded: {report_file}")
-
-	yield report_file
+	yield save_path

@@ -9,7 +9,6 @@ It demonstrates login, job creation, job execution, and report generation workfl
 
 - Python **3.9+**
 - Git
-- Node.js (required for Playwright)
 - Browsers supported by Playwright (Chromium, Firefox, WebKit)
 
 ---
