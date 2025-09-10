@@ -11,7 +11,7 @@
 ## SETUP
 
 1. Clone the repository:
-   `git clone <repository-url>`
+   `git clone https://github.com/nhungnt184/web_automation_test`
    [cite_start]`cd web_automation_test` [cite: 2]
 
 2. Create a virtual environment:
