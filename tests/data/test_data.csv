@@ -1,0 +1,29 @@
+field,control_type,locator_type,locator,locator_ext,value
+job_name,textbox,id,ext-gen1133,,Nguyen Trang Nhung_Backup job_6d
+job_priority,listbox,id,ext-gen1137,div.list-ct li div.ellipsis,5
+use_installed_vm_agents,listbox,id,ext-gen1140,div.list-ct li,Disabled
+app-aware_mode,listbox,id,ext-gen1143,div.list-ct li div.ellipsis,Disabled
+change_tracking,listbox,id,ext-gen1146,div.list-ct li div.ellipsis,Use proprietary method
+network_acceleration,listbox,id,ext-gen1149,div.list-ct li div.ellipsis,Disabled
+network_encryption,listbox,id,ext-gen1152,div.list-ct li div.ellipsis,Disabled
+backup_encryption,listbox,id,ext-gen1155,div.list-ct li div.ellipsis,Disabled
+exclude_swap_files_and_partitions,listbox,id,ext-gen1158,div.list-ct li,Enabled
+exclude_unused_blocks,listbox,id,ext-gen1161,div.list-ct li,Enabled
+temporary_volumes,listbox,id,ext-gen1164,div.list-ct li,Magnetic
+create_full_backup_1,listbox,id,ext-gen1736,div.list-ct li div.ellipsis,Job runs #
+create_full_backup_2,textbox,id,ext-gen1742,,5
+full_backup_mode,listbox,id,ext-gen1761,div.list-ct li div.ellipsis,Synthetic full
+if_full_backup_fails,checkbox,id,ext-gen1174,,Unchecked
+send_job_run_reports_to_1,checkbox,id,ext-gen1178,,Unchecked
+send_job_run_reports_to_2,textbox,id,ext-gen1180,,none
+truncate_exchange_logs_1,checkbox,id,ext-gen1182,,Unchecked
+truncate_exchange_logs_2,listbox,id,ext-gen1185,div.list-ct li,On successful instance processing only
+truncate_sql_server_logs_1,checkbox,id,ext-gen1186,,Unchecked
+truncate_sql_server_logs_2,listbox,id,ext-gen1189,div.list-ct li,On successful instance processing only
+run_local_pre_job_script,checkbox,id,ext-gen1824,,Unchecked
+run_local_post_job_script,checkbox,id,ext-gen1834,,Unchecked
+transporters,listbox,id,ext-gen1201,div.list-ct li,Automatic selection
+limit_transporter_load_to_1,checkbox,id,ext-gen1213,,Unchecked
+limit_transporter_load_to_2,textbox,id,ext-gen1885,,3
+bandwidth_throttling,listbox,id,ext-gen1216,div.list-ct li,Disabled
+bottleneck_detection,checkbox,id,ext-gen1218,,Unchecked
