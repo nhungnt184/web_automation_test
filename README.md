@@ -1,54 +1,111 @@
-# WEB AUTOMATION TEST PROJECT
+# Web Automation Test Project
 
-[cite_start]This project is an automated web testing suite using Python, Pytest, and Playwright[cite: 1].
+This project is an automated web testing suite built with **Python**, **Pytest**, and **Playwright**.  
+It demonstrates login, job creation, job execution, and report generation workflows for a sample web application.  
 
-## REQUIREMENTS
+---
 
-- [cite_start]Python 3.9 or higher [cite: 2]
-- [cite_start]Git [cite: 2]
-- [cite_start]Playwright supported browsers (Chromium, Firefox, WebKit) [cite: 2]
+## Requirements
 
-## SETUP
+- Python **3.9+**
+- Git
+- Node.js (required for Playwright)
+- Browsers supported by Playwright (Chromium, Firefox, WebKit)
 
-1. Clone the repository:
-   `git clone https://github.com/nhungnt184/web_automation_test`
-   [cite_start]`cd web_automation_test` [cite: 2]
+---
 
-2. Create a virtual environment:
-   [cite_start]`python -m venv venv` [cite: 2]
+## Setup Instructions
 
-3. Activate the virtual environment:
-   - [cite_start]Windows: `venv\Scripts\activate` [cite: 2]
-   - [cite_start]Linux/Mac: `source venv/bin/activate` [cite: 2]
+1. **Clone the repository**  
+   ```bash
+   git clone https://github.com/nhungnt184/web_automation_test
+   cd web_automation_test
+   ```
 
-4. Install dependencies:
-   [cite_start]`pip install -r requirements.txt` [cite: 2]
+2. **Create and activate a virtual environment**  
+   - Windows  
+     ```bash
+     python -m venv venv
+     venv\Scripts\activate
+     ```  
+   - Linux / MacOS  
+     ```bash
+     python3 -m venv venv
+     source venv/bin/activate
+     ```
 
-5. Install Playwright browsers:
-   [cite_start]`playwright install` [cite: 2]
+3. **Install dependencies**  
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-## RUNNING TESTS
+4. **Install Playwright browsers**  
+   ```bash
+   playwright install
+   ```
 
-- Run all tests:
-  [cite_start]`pytest` [cite: 2]
+---
 
-- Run a specific test file:
-  [cite_start]`pytest tests/test_1_create_job.py` [cite: 2]
+## Running Tests
 
-- Run a single test function:
-  [cite_start]`pytest tests/test_1_create_job.py::test_1_create_job` [cite: 2]
+- Run **all tests**:
+  ```bash
+  pytest
+  ```
 
-## TEST REPORT
+- Run a **specific test file**:
+  ```bash
+  pytest tests/test_1_create_job.py
+  ```
 
-[cite_start]Test report named "test_report.html" is automatically generated in the project root[cite: 2].
+- Run a **single test function**:
+  ```bash
+  pytest tests/test_1_create_job.py::test_1_create_job
+  ```
 
-## PROJECT STRUCTURE
+---
 
+## Test Reports
+
+To generate an **HTML test report**:
+```bash
+pytest --html=test_report.html --self-contained-html
+```
+
+Open `test_report.html` in your browser to view results.  
+
+---
+
+## Project Structure
+
+```
 web_automation_test/
-  pages/        -> Page Object classes
-  tests/        -> Test scripts and test data
-  conftest.py   -> Pytest fixtures
-  common.py     -> Shared helper functions
-  pytest.ini    -> Pytest configuration
-  requirements.txt -> Dependencies
-  test_report.html -> Example test report
+│
+├── pages/                 # Page Object classes (Login, Main, Job Editor)
+│   ├── page_login.py
+│   ├── page_main.py
+│   ├── page_job_editor.py
+│   └── __init__.py
+│
+├── tests/                 # Test cases and data
+│   ├── data/
+│   │   └── test_data.csv
+│   ├── test_1_create_job.py
+│   ├── test_2_run_job.py
+│   ├── test_3_create_report.py
+│   └── __init__.py
+│
+├── conftest.py            # Pytest fixtures
+├── common.py              # Shared helper functions
+├── pytest.ini             # Pytest configuration
+├── requirements.txt       # Python dependencies
+└── test_report.html       # Example test report
+```
+
+---
+
+## Notes
+
+- The project uses the **Page Object Model (POM)** for better maintainability.  
+- Fixtures in `conftest.py` manage browser sessions, login, and job setup.  
+- Test data is stored in `tests/data/test_data.csv`. 
